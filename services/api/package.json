@@ -4,9 +4,24 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "node src/index.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "fastify": "^4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwkJay/HackSentry.git#main"
+  },
+  "author": "Team DIAMOND",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AwkJay/HackSentry/issues"
+  },
+  "homepage": "https://github.com/AwkJay/HackSentry/tree/main#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
