@@ -1,0 +1,8 @@
+{
+  "name": "hacksentry-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Run `pnpm create next-app` later to scaffold full Next.js app'"
+  }
+}

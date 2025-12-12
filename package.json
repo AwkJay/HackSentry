@@ -1,0 +1,10 @@
+{
+  "name": "hacksentry",
+  "private": true,
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "dev:all": "docker-compose up --build"
+  }
+}
