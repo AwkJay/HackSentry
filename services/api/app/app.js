@@ -8,6 +8,12 @@ import bookmarkRoutes from "../routes/bookmarkRoutes.js";
 import filterRoutes from "../routes/filterRoutes.js";
 import searchRoutes from "../routes/searchRoutes.js";
 
+/* Error handler imports */
+import {
+  notFoundHandler,
+  globalErrorHandler,
+} from "../middleware/globalErrHandler.js";
+
 const app = express();
 
 /* Middleware */
@@ -27,21 +33,10 @@ app.use("/api/bookmarks", bookmarkRoutes);
 app.use("/api/filters", filterRoutes);
 app.use("/api/search", searchRoutes);
 
-/* 404 handler */
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    message: `Route ${req.originalUrl} not found`,
-  });
-});
+/* 404 handler - must be after all routes */
+app.use(notFoundHandler);
 
-/* Error handler */
-app.use((err, req, res, next) => {
-  console.error("Error:", err.message);
-  res.status(err.status || 500).json({
-    success: false,
-    message: err.message || "Internal server error",
-  });
-});
+/* Global error handler - must be last */
+app.use(globalErrorHandler);
 
 export default app;
